@@ -1,0 +1,1705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alan's Hygiene Services & Cleaning</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        body {
+            background-color: #03001e;
+            color: #f8fafc;
+            line-height: 1.6;
+            overflow-x: hidden;
+            padding-bottom: 4rem;
+        }
+
+        /* 🌈 ANIMATION 1: Continuous Vibrant Color Wave Background */
+        @keyframes liquidBg {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        header {
+            background: linear-gradient(-45deg, #7303c0, #ec38bc, #03001e, #03c8a8);
+            background-size: 300% 300%;
+            animation: liquidBg 8s ease infinite;
+            color: white;
+            text-align: center;
+            padding: 5rem 1rem 7rem;
+            border-bottom-left-radius: 60px;
+            border-bottom-right-radius: 60px;
+            box-shadow: 0 15px 35px rgba(236, 56, 188, 0.3);
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            letter-spacing: -1px;
+            text-shadow: 0 0 20px rgba(255,255,255,0.4);
+        }
+
+        /* 🤖 ANIMATION 2: Bouncing Floating Mascot Bubble */
+        @keyframes floatMascot {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(3deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        .mascot-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin: 2rem auto 0;
+            max-width: 480px;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 15px 25px;
+            border-radius: 40px;
+            backdrop-filter: blur(12px);
+            border: 2px solid rgba(3, 200, 168, 0.4);
+            animation: floatMascot 3.5s ease-in-out infinite;
+            box-shadow: 0 0 25px rgba(3, 200, 168, 0.2);
+        }
+
+        .mascot-avatar {
+            font-size: 3rem;
+            text-shadow: 0 0 15px #03c8a8;
+        }
+
+        .speech-bubble {
+            text-align: left;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .speech-bubble span {
+            display: block;
+            font-size: 0.8rem;
+            color: #03c8a8;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 3px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: -4rem auto 0;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* 🖼️ Main Image Showcase Block with Dynamic Glow */
+        @keyframes borderGlow {
+            0% { border-color: #ec38bc; box-shadow: 0 20px 40px rgba(236, 56, 188, 0.2); }
+            50% { border-color: #03c8a8; box-shadow: 0 20px 40px rgba(3, 200, 168, 0.3); }
+            100% { border-color: #ec38bc; box-shadow: 0 20px 40px rgba(236, 56, 188, 0.2); }
+        }
+
+        .main-showcase {
+            width: 100%;
+            background: #0c0728;
+            border-radius: 32px;
+            overflow: hidden;
+            border: 3px solid #ec38bc;
+            animation: borderGlow 6s infinite ease-in-out;
+            margin-bottom: 3.5rem;
+        }
+
+        .showcase-img {
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .showcase-bar {
+            background: #0a0521;
+            padding: 1.2rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .status-badge {
+            background: rgba(3, 200, 168, 0.15);
+            color: #03c8a8;
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 800;
+            border: 1px solid #03c8a8;
+            text-shadow: 0 0 10px rgba(3,200,168,0.5);
+        }
+
+        .section-title {
+            text-align: center;
+            color: #fff;
+            margin: 4rem 0 2rem;
+            font-size: 2.2rem;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+            background: linear-gradient(to right, #ec38bc, #03c8a8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* ✨ ANIMATION 3: Pop-Up Flashcards Grid */
+        .flashcard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 1.8rem;
+            margin-bottom: 4rem;
+        }
+
+        .flashcard {
+            background: #0f0a34;
+            border: 2px solid #1a1352;
+            padding: 2.5rem 1.8rem;
+            border-radius: 24px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+        }
+
+        .flashcard:hover {
+            transform: scale(1.06) translateY(-5px);
+            border-color: #03c8a8;
+            background: #150e4a;
+            box-shadow: 0 15px 35px rgba(3, 200, 168, 0.25);
+        }
+
+        .flashcard-icon {
+            font-size: 3rem;
+            margin-bottom: 1.2rem;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .flashcard:hover .flashcard-icon {
+            transform: rotate(15deg) scale(1.2);
+        }
+
+        .flashcard h3 {
+            color: #ffffff;
+            font-size: 1.4rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .flashcard p {
+            color: #9aa2cc;
+            font-size: 0.98rem;
+        }
+
+        /* 🏎️ ANIMATION 4: Infinite Auto-Scrolling Customer Review Track */
+        @keyframes continuousScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-320px * 3)); }
+        }
+
+        .reviews-container {
+            width: 100%;
+            overflow: hidden;
+            padding: 1.5rem 0;
+            background: rgba(15, 10, 52, 0.5);
+            border-radius: 24px;
+            border: 1px solid rgba(255,255,255,0.05);
+            margin-bottom: 4rem;
+        }
+
+        .reviews-track {
+            display: flex;
+            gap: 1.5rem;
+            width: calc(320px * 6);
+            animation: continuousScroll 20s linear infinite;
+        }
+
+        .reviews-track:hover {
+            animation-play-state: paused; /* Stops moving when you touch/hover it */
+        }
+
+        .review-card {
+            width: 300px;
+            flex-shrink: 0;
+            background: #150e4a;
+            padding: 1.8rem;
+            border-radius: 20px;
+            border-left: 5px solid #ec38bc;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        .stars {
+            color: #f59e0b;
+            margin-bottom: 0.6rem;
+            font-size: 1.2rem;
+        }
+
+        .review-text {
+            font-style: italic;
+            color: #e2e8f0;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .reviewer-name {
+            font-weight: 800;
+            color: #03c8a8;
+            font-size: 0.88rem;
+            text-transform: uppercase;
+        }
+
+        /* Info Segment Containers */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .info-card {
+            background: #0f0a34;
+            padding: 2rem;
+            border-radius: 24px;
+            border: 2px solid #1a1352;
+        }
+
+        .info-card h3 {
+            color: #03c8a8;
+            margin-bottom: 1.2rem;
+            font-size: 1.4rem;
+            border-bottom: 2px solid rgba(3, 200, 168, 0.2);
+            padding-bottom: 0.5rem;
+        }
+
+        .info-list {
+            list-style: none;
+        }
+
+        .info-list li {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+            color: #cbd5e1;
+        }
+
+        /* 🚨 ANIMATION 5: Atomic Hyper-Pulsing Button */
+        @keyframes hyperPulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.8), 0 0 20px rgba(37, 211, 102, 0.4); }
+            70% { box-shadow: 0 0 0 25px rgba(37, 211, 102, 0), 0 0 30px rgba(37, 211, 102, 0.6); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0), 0 0 20px rgba(37, 211, 102, 0.4); }
+        }
+
+        .cta-box {
+            text-align: center;
+            margin: 5rem 0 2rem;
+        }
+
+        .whatsapp-trigger {
+            display: inline-block;
+            background: linear-gradient(90deg, #25D366, #128C7E);
+            color: white;
+            text-decoration: none;
+            padding: 1.4rem 4rem;
+            font-size: 1.4rem;
+            font-weight: 900;
+            border-radius: 50px;
+            animation: hyperPulse 1.8s infinite;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .whatsapp-trigger:hover {
+            transform: scale(1.08);
+        }
+
+        footer {
+            text-align: center;
+            color: #494570;
+            font-size: 0.9rem;
+            margin-top: 5rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Alan's Hygiene Services</h1>
+        
+        <!-- Interactive Smart Mascot Assistant Section -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alan's Hygiene Services & Cleaning</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        body {
+            background-color: #03001e;
+            color: #f8fafc;
+            line-height: 1.6;
+            overflow-x: hidden;
+            padding-bottom: 4rem;
+        }
+
+        /* 🌈 ANIMATION 1: Continuous Vibrant Color Wave Background */
+        @keyframes liquidBg {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        header {
+            background: linear-gradient(-45deg, #7303c0, #ec38bc, #03001e, #03c8a8);
+            background-size: 300% 300%;
+            animation: liquidBg 8s ease infinite;
+            color: white;
+            text-align: center;
+            padding: 5rem 1rem 7rem;
+            border-bottom-left-radius: 60px;
+            border-bottom-right-radius: 60px;
+            box-shadow: 0 15px 35px rgba(236, 56, 188, 0.3);
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            letter-spacing: -1px;
+            text-shadow: 0 0 20px rgba(255,255,255,0.4);
+        }
+
+        /* 🤖 ANIMATION 2: Bouncing Floating Mascot Bubble */
+        @keyframes floatMascot {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(3deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        .mascot-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin: 2rem auto 0;
+            max-width: 480px;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 15px 25px;
+            border-radius: 40px;
+            backdrop-filter: blur(12px);
+            border: 2px solid rgba(3, 200, 168, 0.4);
+            animation: floatMascot 3.5s ease-in-out infinite;
+            box-shadow: 0 0 25px rgba(3, 200, 168, 0.2);
+        }
+
+        .mascot-avatar {
+            font-size: 3rem;
+            text-shadow: 0 0 15px #03c8a8;
+        }
+
+        .speech-bubble {
+            text-align: left;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .speech-bubble span {
+            display: block;
+            font-size: 0.8rem;
+            color: #03c8a8;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 3px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: -4rem auto 0;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* 🖼️ Main Image Showcase Block with Dynamic Glow */
+        @keyframes borderGlow {
+            0% { border-color: #ec38bc; box-shadow: 0 20px 40px rgba(236, 56, 188, 0.2); }
+            50% { border-color: #03c8a8; box-shadow: 0 20px 40px rgba(3, 200, 168, 0.3); }
+            100% { border-color: #ec38bc; box-shadow: 0 20px 40px rgba(236, 56, 188, 0.2); }
+        }
+
+        .main-showcase {
+            width: 100%;
+            background: #0c0728;
+            border-radius: 32px;
+            overflow: hidden;
+            border: 3px solid #ec38bc;
+            animation: borderGlow 6s infinite ease-in-out;
+            margin-bottom: 3.5rem;
+        }
+
+        .showcase-img {
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .showcase-bar {
+            background: #0a0521;
+            padding: 1.2rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .status-badge {
+            background: rgba(3, 200, 168, 0.15);
+            color: #03c8a8;
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 800;
+            border: 1px solid #03c8a8;
+            text-shadow: 0 0 10px rgba(3,200,168,0.5);
+        }
+
+        .section-title {
+            text-align: center;
+            color: #fff;
+            margin: 4rem 0 2rem;
+            font-size: 2.2rem;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+            background: linear-gradient(to right, #ec38bc, #03c8a8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* ✨ ANIMATION 3: Pop-Up Flashcards Grid */
+        .flashcard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 1.8rem;
+            margin-bottom: 4rem;
+        }
+
+        .flashcard {
+            background: #0f0a34;
+            border: 2px solid #1a1352;
+            padding: 2.5rem 1.8rem;
+            border-radius: 24px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+        }
+
+        .flashcard:hover {
+            transform: scale(1.06) translateY(-5px);
+            border-color: #03c8a8;
+            background: #150e4a;
+            box-shadow: 0 15px 35px rgba(3, 200, 168, 0.25);
+        }
+
+        .flashcard-icon {
+            font-size: 3rem;
+            margin-bottom: 1.2rem;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .flashcard:hover .flashcard-icon {
+            transform: rotate(15deg) scale(1.2);
+        }
+
+        .flashcard h3 {
+            color: #ffffff;
+            font-size: 1.4rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .flashcard p {
+            color: #9aa2cc;
+            font-size: 0.98rem;
+        }
+
+        /* 🏎️ ANIMATION 4: Infinite Auto-Scrolling Customer Review Track */
+        @keyframes continuousScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-320px * 3)); }
+        }
+
+        .reviews-container {
+            width: 100%;
+            overflow: hidden;
+            padding: 1.5rem 0;
+            background: rgba(15, 10, 52, 0.5);
+            border-radius: 24px;
+            border: 1px solid rgba(255,255,255,0.05);
+            margin-bottom: 4rem;
+        }
+
+        .reviews-track {
+            display: flex;
+            gap: 1.5rem;
+            width: calc(320px * 6);
+            animation: continuousScroll 20s linear infinite;
+        }
+
+        .reviews-track:hover {
+            animation-play-state: paused; /* Stops moving when you touch/hover it */
+        }
+
+        .review-card {
+            width: 300px;
+            flex-shrink: 0;
+            background: #150e4a;
+            padding: 1.8rem;
+            border-radius: 20px;
+            border-left: 5px solid #ec38bc;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        .stars {
+            color: #f59e0b;
+            margin-bottom: 0.6rem;
+            font-size: 1.2rem;
+        }
+
+        .review-text {
+            font-style: italic;
+            color: #e2e8f0;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .reviewer-name {
+            font-weight: 800;
+            color: #03c8a8;
+            font-size: 0.88rem;
+            text-transform: uppercase;
+        }
+
+        /* Info Segment Containers */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .info-card {
+            background: #0f0a34;
+            padding: 2rem;
+            border-radius: 24px;
+            border: 2px solid #1a1352;
+        }
+
+        .info-card h3 {
+            color: #03c8a8;
+            margin-bottom: 1.2rem;
+            font-size: 1.4rem;
+            border-bottom: 2px solid rgba(3, 200, 168, 0.2);
+            padding-bottom: 0.5rem;
+        }
+
+        .info-list {
+            list-style: none;
+        }
+
+        .info-list li {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+            color: #cbd5e1;
+        }
+
+        /* 🚨 ANIMATION 5: Atomic Hyper-Pulsing Button */
+        @keyframes hyperPulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.8), 0 0 20px rgba(37, 211, 102, 0.4); }
+            70% { box-shadow: 0 0 0 25px rgba(37, 211, 102, 0), 0 0 30px rgba(37, 211, 102, 0.6); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0), 0 0 20px rgba(37, 211, 102, 0.4); }
+        }
+
+        .cta-box {
+            text-align: center;
+            margin: 5rem 0 2rem;
+        }
+
+        .whatsapp-trigger {
+            display: inline-block;
+            background: linear-gradient(90deg, #25D366, #128C7E);
+            color: white;
+            text-decoration: none;
+            padding: 1.4rem 4rem;
+            font-size: 1.4rem;
+            font-weight: 900;
+            border-radius: 50px;
+            animation: hyperPulse 1.8s infinite;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .whatsapp-trigger:hover {
+            transform: scale(1.08);
+        }
+
+        footer {
+            text-align: center;
+            color: #494570;
+            font-size: 0.9rem;
+            margin-top: 5rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Alan's Hygiene Services</h1>
+        
+        <!-- Interactive Smart Mascot Assistant Section -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alan's Hygiene Services & Cleaning</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        body {
+            background-color: #03001e;
+            color: #f8fafc;
+            line-height: 1.6;
+            overflow-x: hidden;
+            padding-bottom: 4rem;
+        }
+
+        /* 🌈 ANIMATION 1: Continuous Vibrant Color Wave Background */
+        @keyframes liquidBg {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        header {
+            background: linear-gradient(-45deg, #7303c0, #ec38bc, #03001e, #03c8a8);
+            background-size: 300% 300%;
+            animation: liquidBg 8s ease infinite;
+            color: white;
+            text-align: center;
+            padding: 5rem 1rem 7rem;
+            border-bottom-left-radius: 60px;
+            border-bottom-right-radius: 60px;
+            box-shadow: 0 15px 35px rgba(236, 56, 188, 0.3);
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            letter-spacing: -1px;
+            text-shadow: 0 0 20px rgba(255,255,255,0.4);
+        }
+
+        /* 🤖 ANIMATION 2: Bouncing Floating Mascot Bubble */
+        @keyframes floatMascot {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(3deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        .mascot-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin: 2rem auto 0;
+            max-width: 480px;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 15px 25px;
+            border-radius: 40px;
+            backdrop-filter: blur(12px);
+            border: 2px solid rgba(3, 200, 168, 0.4);
+            animation: floatMascot 3.5s ease-in-out infinite;
+            box-shadow: 0 0 25px rgba(3, 200, 168, 0.2);
+        }
+
+        .mascot-avatar {
+            font-size: 3rem;
+            text-shadow: 0 0 15px #03c8a8;
+        }
+
+        .speech-bubble {
+            text-align: left;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .speech-bubble span {
+            display: block;
+            font-size: 0.8rem;
+            color: #03c8a8;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 3px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: -4rem auto 0;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* 🖼️ Main Image Showcase Block with Dynamic Glow */
+        @keyframes borderGlow {
+            0% { border-color: #ec38bc; box-shadow: 0 20px 40px rgba(236, 56, 188, 0.2); }
+            50% { border-color: #03c8a8; box-shadow: 0 20px 40px rgba(3, 200, 168, 0.3); }
+            100% { border-color: #ec38bc; box-shadow: 0 20px 40px rgba(236, 56, 188, 0.2); }
+        }
+
+        .main-showcase {
+            width: 100%;
+            background: #0c0728;
+            border-radius: 32px;
+            overflow: hidden;
+            border: 3px solid #ec38bc;
+            animation: borderGlow 6s infinite ease-in-out;
+            margin-bottom: 3.5rem;
+        }
+
+        .showcase-img {
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .showcase-bar {
+            background: #0a0521;
+            padding: 1.2rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .status-badge {
+            background: rgba(3, 200, 168, 0.15);
+            color: #03c8a8;
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 800;
+            border: 1px solid #03c8a8;
+            text-shadow: 0 0 10px rgba(3,200,168,0.5);
+        }
+
+        .section-title {
+            text-align: center;
+            color: #fff;
+            margin: 4rem 0 2rem;
+            font-size: 2.2rem;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+            background: linear-gradient(to right, #ec38bc, #03c8a8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* ✨ ANIMATION 3: Pop-Up Flashcards Grid */
+        .flashcard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 1.8rem;
+            margin-bottom: 4rem;
+        }
+
+        .flashcard {
+            background: #0f0a34;
+            border: 2px solid #1a1352;
+            padding: 2.5rem 1.8rem;
+            border-radius: 24px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+        }
+
+        .flashcard:hover {
+            transform: scale(1.06) translateY(-5px);
+            border-color: #03c8a8;
+            background: #150e4a;
+            box-shadow: 0 15px 35px rgba(3, 200, 168, 0.25);
+        }
+
+        .flashcard-icon {
+            font-size: 3rem;
+            margin-bottom: 1.2rem;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .flashcard:hover .flashcard-icon {
+            transform: rotate(15deg) scale(1.2);
+        }
+
+        .flashcard h3 {
+            color: #ffffff;
+            font-size: 1.4rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .flashcard p {
+            color: #9aa2cc;
+            font-size: 0.98rem;
+        }
+
+        /* 🏎️ ANIMATION 4: Infinite Auto-Scrolling Customer Review Track */
+        @keyframes continuousScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-320px * 3)); }
+        }
+
+        .reviews-container {
+            width: 100%;
+            overflow: hidden;
+            padding: 1.5rem 0;
+            background: rgba(15, 10, 52, 0.5);
+            border-radius: 24px;
+            border: 1px solid rgba(255,255,255,0.05);
+            margin-bottom: 4rem;
+        }
+
+        .reviews-track {
+            display: flex;
+            gap: 1.5rem;
+            width: calc(320px * 6);
+            animation: continuousScroll 20s linear infinite;
+        }
+
+        .reviews-track:hover {
+            animation-play-state: paused; /* Stops moving when you touch/hover it */
+        }
+
+        .review-card {
+            width: 300px;
+            flex-shrink: 0;
+            background: #150e4a;
+            padding: 1.8rem;
+            border-radius: 20px;
+            border-left: 5px solid #ec38bc;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        .stars {
+            color: #f59e0b;
+            margin-bottom: 0.6rem;
+            font-size: 1.2rem;
+        }
+
+        .review-text {
+            font-style: italic;
+            color: #e2e8f0;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .reviewer-name {
+            font-weight: 800;
+            color: #03c8a8;
+            font-size: 0.88rem;
+            text-transform: uppercase;
+        }
+
+        /* Info Segment Containers */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .info-card {
+            background: #0f0a34;
+            padding: 2rem;
+            border-radius: 24px;
+            border: 2px solid #1a1352;
+        }
+
+        .info-card h3 {
+            color: #03c8a8;
+            margin-bottom: 1.2rem;
+            font-size: 1.4rem;
+            border-bottom: 2px solid rgba(3, 200, 168, 0.2);
+            padding-bottom: 0.5rem;
+        }
+
+        .info-list {
+            list-style: none;
+        }
+
+        .info-list li {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+            color: #cbd5e1;
+        }
+
+        /* 🚨 ANIMATION 5: Atomic Hyper-Pulsing Button */
+        @keyframes hyperPulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.8), 0 0 20px rgba(37, 211, 102, 0.4); }
+            70% { box-shadow: 0 0 0 25px rgba(37, 211, 102, 0), 0 0 30px rgba(37, 211, 102, 0.6); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0), 0 0 20px rgba(37, 211, 102, 0.4); }
+        }
+
+        .cta-box {
+            text-align: center;
+            margin: 5rem 0 2rem;
+        }
+
+        .whatsapp-trigger {
+            display: inline-block;
+            background: linear-gradient(90deg, #25D366, #128C7E);
+            color: white;
+            text-decoration: none;
+            padding: 1.4rem 4rem;
+            font-size: 1.4rem;
+            font-weight: 900;
+            border-radius: 50px;
+            animation: hyperPulse 1.8s infinite;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .whatsapp-trigger:hover {
+            transform: scale(1.08);
+        }
+
+        footer {
+            text-align: center;
+            color: #494570;
+            font-size: 0.9rem;
+            margin-top: 5rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Alan's Hygiene Services</h1>
+        
+        <!-- Interactive Smart Mascot Assistant Section -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alan's Hygiene Services & Cleaning</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        body {
+            background-color: #03001e;
+            color: #f8fafc;
+            line-height: 1.6;
+            overflow-x: hidden;
+            padding-bottom: 4rem;
+        }
+
+        /* 🌈 ANIMATION 1: Continuous Vibrant Color Wave Background */
+        @keyframes liquidBg {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        header {
+            background: linear-gradient(-45deg, #7303c0, #ec38bc, #03001e, #03c8a8);
+            background-size: 300% 300%;
+            animation: liquidBg 8s ease infinite;
+            color: white;
+            text-align: center;
+            padding: 5rem 1rem 7rem;
+            border-bottom-left-radius: 60px;
+            border-bottom-right-radius: 60px;
+            box-shadow: 0 15px 35px rgba(236, 56, 188, 0.3);
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            letter-spacing: -1px;
+            text-shadow: 0 0 20px rgba(255,255,255,0.4);
+        }
+
+        /* 🤖 ANIMATION 2: Bouncing Floating Mascot Bubble */
+        @keyframes floatMascot {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(3deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        .mascot-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin: 2rem auto 0;
+            max-width: 480px;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 15px 25px;
+            border-radius: 40px;
+            backdrop-filter: blur(12px);
+            border: 2px solid rgba(3, 200, 168, 0.4);
+            animation: floatMascot 3.5s ease-in-out infinite;
+            box-shadow: 0 0 25px rgba(3, 200, 168, 0.2);
+        }
+
+        .mascot-avatar {
+            font-size: 3rem;
+            text-shadow: 0 0 15px #03c8a8;
+        }
+
+        .speech-bubble {
+            text-align: left;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .speech-bubble span {
+            display: block;
+            font-size: 0.8rem;
+            color: #03c8a8;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 3px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: -4rem auto 0;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* 🖼️ Main Image Showcase Block with Dynamic Glow */
+        @keyframes borderGlow {
+            0% { border-color: #ec38bc; box-shadow: 0 20px 40px rgba(236, 56, 188, 0.2); }
+            50% { border-color: #03c8a8; box-shadow: 0 20px 40px rgba(3, 200, 168, 0.3); }
+            100% { border-color: #ec38bc; box-shadow: 0 20px 40px rgba(236, 56, 188, 0.2); }
+        }
+
+        .main-showcase {
+            width: 100%;
+            background: #0c0728;
+            border-radius: 32px;
+            overflow: hidden;
+            border: 3px solid #ec38bc;
+            animation: borderGlow 6s infinite ease-in-out;
+            margin-bottom: 3.5rem;
+        }
+
+        .showcase-img {
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .showcase-bar {
+            background: #0a0521;
+            padding: 1.2rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .status-badge {
+            background: rgba(3, 200, 168, 0.15);
+            color: #03c8a8;
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 800;
+            border: 1px solid #03c8a8;
+            text-shadow: 0 0 10px rgba(3,200,168,0.5);
+        }
+
+        .section-title {
+            text-align: center;
+            color: #fff;
+            margin: 4rem 0 2rem;
+            font-size: 2.2rem;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+            background: linear-gradient(to right, #ec38bc, #03c8a8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* ✨ ANIMATION 3: Pop-Up Flashcards Grid */
+        .flashcard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 1.8rem;
+            margin-bottom: 4rem;
+        }
+
+        .flashcard {
+            background: #0f0a34;
+            border: 2px solid #1a1352;
+            padding: 2.5rem 1.8rem;
+            border-radius: 24px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+        }
+
+        .flashcard:hover {
+            transform: scale(1.06) translateY(-5px);
+            border-color: #03c8a8;
+            background: #150e4a;
+            box-shadow: 0 15px 35px rgba(3, 200, 168, 0.25);
+        }
+
+        .flashcard-icon {
+            font-size: 3rem;
+            margin-bottom: 1.2rem;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .flashcard:hover .flashcard-icon {
+            transform: rotate(15deg) scale(1.2);
+        }
+
+        .flashcard h3 {
+            color: #ffffff;
+            font-size: 1.4rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .flashcard p {
+            color: #9aa2cc;
+            font-size: 0.98rem;
+        }
+
+        /* 🏎️ ANIMATION 4: Infinite Auto-Scrolling Customer Review Track */
+        @keyframes continuousScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-320px * 3)); }
+        }
+
+        .reviews-container {
+            width: 100%;
+            overflow: hidden;
+            padding: 1.5rem 0;
+            background: rgba(15, 10, 52, 0.5);
+            border-radius: 24px;
+            border: 1px solid rgba(255,255,255,0.05);
+            margin-bottom: 4rem;
+        }
+
+        .reviews-track {
+            display: flex;
+            gap: 1.5rem;
+            width: calc(320px * 6);
+            animation: continuousScroll 20s linear infinite;
+        }
+
+        .reviews-track:hover {
+            animation-play-state: paused; /* Stops moving when you touch/hover it */
+        }
+
+        .review-card {
+            width: 300px;
+            flex-shrink: 0;
+            background: #150e4a;
+            padding: 1.8rem;
+            border-radius: 20px;
+            border-left: 5px solid #ec38bc;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        .stars {
+            color: #f59e0b;
+            margin-bottom: 0.6rem;
+            font-size: 1.2rem;
+        }
+
+        .review-text {
+            font-style: italic;
+            color: #e2e8f0;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .reviewer-name {
+            font-weight: 800;
+            color: #03c8a8;
+            font-size: 0.88rem;
+            text-transform: uppercase;
+        }
+
+        /* Info Segment Containers */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .info-card {
+            background: #0f0a34;
+            padding: 2rem;
+            border-radius: 24px;
+            border: 2px solid #1a1352;
+        }
+
+        .info-card h3 {
+            color: #03c8a8;
+            margin-bottom: 1.2rem;
+            font-size: 1.4rem;
+            border-bottom: 2px solid rgba(3, 200, 168, 0.2);
+            padding-bottom: 0.5rem;
+        }
+
+        .info-list {
+            list-style: none;
+        }
+
+        .info-list li {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+            color: #cbd5e1;
+        }
+
+        /* 🚨 ANIMATION 5: Atomic Hyper-Pulsing Button */
+        @keyframes hyperPulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.8), 0 0 20px rgba(37, 211, 102, 0.4); }
+            70% { box-shadow: 0 0 0 25px rgba(37, 211, 102, 0), 0 0 30px rgba(37, 211, 102, 0.6); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0), 0 0 20px rgba(37, 211, 102, 0.4); }
+        }
+
+        .cta-box {
+            text-align: center;
+            margin: 5rem 0 2rem;
+        }
+
+        .whatsapp-trigger {
+            display: inline-block;
+            background: linear-gradient(90deg, #25D366, #128C7E);
+            color: white;
+            text-decoration: none;
+            padding: 1.4rem 4rem;
+            font-size: 1.4rem;
+            font-weight: 900;
+            border-radius: 50px;
+            animation: hyperPulse 1.8s infinite;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .whatsapp-trigger:hover {
+            transform: scale(1.08);
+        }
+
+        footer {
+            text-align: center;
+            color: #494570;
+            font-size: 0.9rem;
+            margin-top: 5rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Alan's Hygiene Services</h1>
+        
+        <!-- Interactive Smart Mascot Assistant Section -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alan's Hygiene Services & Cleaning</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        body {
+            background-color: #03001e;
+            color: #f8fafc;
+            line-height: 1.6;
+            overflow-x: hidden;
+            padding-bottom: 4rem;
+        }
+
+        /* 🌈 ANIMATION 1: Continuous Vibrant Color Wave Background */
+        @keyframes liquidBg {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        header {
+            background: linear-gradient(-45deg, #7303c0, #ec38bc, #03001e, #03c8a8);
+            background-size: 300% 300%;
+            animation: liquidBg 8s ease infinite;
+            color: white;
+            text-align: center;
+            padding: 5rem 1rem 7rem;
+            border-bottom-left-radius: 60px;
+            border-bottom-right-radius: 60px;
+            box-shadow: 0 15px 35px rgba(236, 56, 188, 0.3);
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            letter-spacing: -1px;
+            text-shadow: 0 0 20px rgba(255,255,255,0.4);
+        }
+
+        /* 🤖 ANIMATION 2: Bouncing Floating Mascot Bubble */
+        @keyframes floatMascot {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(3deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        .mascot-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin: 2rem auto 0;
+            max-width: 480px;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 15px 25px;
+            border-radius: 40px;
+            backdrop-filter: blur(12px);
+            border: 2px solid rgba(3, 200, 168, 0.4);
+            animation: floatMascot 3.5s ease-in-out infinite;
+            box-shadow: 0 0 25px rgba(3, 200, 168, 0.2);
+        }
+
+        .mascot-avatar {
+            font-size: 3rem;
+            text-shadow: 0 0 15px #03c8a8;
+        }
+
+        .speech-bubble {
+            text-align: left;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .speech-bubble span {
+            display: block;
+            font-size: 0.8rem;
+            color: #03c8a8;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 3px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: -4rem auto 0;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* 🖼️ Main Image Showcase Block with Dynamic Glow */
+        @keyframes borderGlow {
+            0% { border-color: #ec38bc; box-shadow: 0 20px 40px rgba(236, 56, 188, 0.2); }
+            50% { border-color: #03c8a8; box-shadow: 0 20px 40px rgba(3, 200, 168, 0.3); }
+            100% { border-color: #ec38bc; box-shadow: 0 20px 40px rgba(236, 56, 188, 0.2); }
+        }
+
+        .main-showcase {
+            width: 100%;
+            background: #0c0728;
+            border-radius: 32px;
+            overflow: hidden;
+            border: 3px solid #ec38bc;
+            animation: borderGlow 6s infinite ease-in-out;
+            margin-bottom: 3.5rem;
+        }
+
+        .showcase-img {
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .showcase-bar {
+            background: #0a0521;
+            padding: 1.2rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .status-badge {
+            background: rgba(3, 200, 168, 0.15);
+            color: #03c8a8;
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 800;
+            border: 1px solid #03c8a8;
+            text-shadow: 0 0 10px rgba(3,200,168,0.5);
+        }
+
+        .section-title {
+            text-align: center;
+            color: #fff;
+            margin: 4rem 0 2rem;
+            font-size: 2.2rem;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+            background: linear-gradient(to right, #ec38bc, #03c8a8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* ✨ ANIMATION 3: Pop-Up Flashcards Grid */
+        .flashcard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 1.8rem;
+            margin-bottom: 4rem;
+        }
+
+        .flashcard {
+            background: #0f0a34;
+            border: 2px solid #1a1352;
+            padding: 2.5rem 1.8rem;
+            border-radius: 24px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+        }
+
+        .flashcard:hover {
+            transform: scale(1.06) translateY(-5px);
+            border-color: #03c8a8;
+            background: #150e4a;
+            box-shadow: 0 15px 35px rgba(3, 200, 168, 0.25);
+        }
+
+        .flashcard-icon {
+            font-size: 3rem;
+            margin-bottom: 1.2rem;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .flashcard:hover .flashcard-icon {
+            transform: rotate(15deg) scale(1.2);
+        }
+
+        .flashcard h3 {
+            color: #ffffff;
+            font-size: 1.4rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .flashcard p {
+            color: #9aa2cc;
+            font-size: 0.98rem;
+        }
+
+        /* 🏎️ ANIMATION 4: Infinite Auto-Scrolling Customer Review Track */
+        @keyframes continuousScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-320px * 3)); }
+        }
+
+        .reviews-container {
+            width: 100%;
+            overflow: hidden;
+            padding: 1.5rem 0;
+            background: rgba(15, 10, 52, 0.5);
+            border-radius: 24px;
+            border: 1px solid rgba(255,255,255,0.05);
+            margin-bottom: 4rem;
+        }
+
+        .reviews-track {
+            display: flex;
+            gap: 1.5rem;
+            width: calc(320px * 6);
+            animation: continuousScroll 20s linear infinite;
+        }
+
+        .reviews-track:hover {
+            animation-play-state: paused; /* Stops moving when you touch/hover it */
+        }
+
+        .review-card {
+            width: 300px;
+            flex-shrink: 0;
+            background: #150e4a;
+            padding: 1.8rem;
+            border-radius: 20px;
+            border-left: 5px solid #ec38bc;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        .stars {
+            color: #f59e0b;
+            margin-bottom: 0.6rem;
+            font-size: 1.2rem;
+        }
+
+        .review-text {
+            font-style: italic;
+            color: #e2e8f0;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .reviewer-name {
+            font-weight: 800;
+            color: #03c8a8;
+            font-size: 0.88rem;
+            text-transform: uppercase;
+        }
+
+        /* Info Segment Containers */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .info-card {
+            background: #0f0a34;
+            padding: 2rem;
+            border-radius: 24px;
+            border: 2px solid #1a1352;
+        }
+
+        .info-card h3 {
+            color: #03c8a8;
+            margin-bottom: 1.2rem;
+            font-size: 1.4rem;
+            border-bottom: 2px solid rgba(3, 200, 168, 0.2);
+            padding-bottom: 0.5rem;
+        }
+
+        .info-list {
+            list-style: none;
+        }
+
+        .info-list li {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+            color: #cbd5e1;
+        }
+
+        /* 🚨 ANIMATION 5: Atomic Hyper-Pulsing Button */
+        @keyframes hyperPulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.8), 0 0 20px rgba(37, 211, 102, 0.4); }
+            70% { box-shadow: 0 0 0 25px rgba(37, 211, 102, 0), 0 0 30px rgba(37, 211, 102, 0.6); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0), 0 0 20px rgba(37, 211, 102, 0.4); }
+        }
+
+        .cta-box {
+            text-align: center;
+            margin: 5rem 0 2rem;
+        }
+
+        .whatsapp-trigger {
+            display: inline-block;
+            background: linear-gradient(90deg, #25D366, #128C7E);
+            color: white;
+            text-decoration: none;
+            padding: 1.4rem 4rem;
+            font-size: 1.4rem;
+            font-weight: 900;
+            border-radius: 50px;
+            animation: hyperPulse 1.8s infinite;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .whatsapp-trigger:hover {
+            transform: scale(1.08);
+        }
+
+        footer {
+            text-align: center;
+            color: #494570;
+            font-size: 0.9rem;
+            margin-top: 5rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Alan's Hygiene Services</h1>
+        
+        <!-- Interactive Smart Mascot Assistant Section -->
